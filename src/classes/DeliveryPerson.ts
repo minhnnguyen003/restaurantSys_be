@@ -1,12 +1,10 @@
-enum VehicleType {
-    MOTORCYCLE,
-    BIKE, 
-    CAR
-}
+import Staff from "./Staff";
+import Position from "../enum/Position";
+import VehicleType from "../enum/VehicleType";
 
 export default class DeliveryPerson extends Staff {
-    #regoNumber : string
-    #vehicleType: VehicleType
+    _regoNumber : string
+    _vehicleType: VehicleType
 
     constructor(staffId : number,
         name : string,
@@ -15,9 +13,9 @@ export default class DeliveryPerson extends Staff {
         regoNumber : string,
         vehicleType : VehicleType) {
         
-        super(staffId, name, dob, position.DELIVERYPERSON, address);
-        this.#regoNumber = regoNumber;
-        this.#vehicleType = vehicleType;
+        super(staffId, name, dob, Position.DELIVERYPERSON, address);
+        this._regoNumber = regoNumber;
+        this._vehicleType = vehicleType;
     }
 
     /*

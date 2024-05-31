@@ -1,13 +1,23 @@
 import { Request, Response } from "express";
 import Table  from "../classes/Table";
+import DatabaseConnection from "../classes/DatabaseConnection";
+import TableTableTypes from "../types/TableTableTypes";
 
 export default function getTables (req: Request, res: Response) {
-    // Query String Handler
-    
+    let partySize = req.query.size ? req.query.size : 0;
+    let tableList : Table[] = [];
     // Query here
+
     
-    // Data Setup
-    
-    // Return Object
-    res.status(200).send("Win win");
+    let DBquery = DatabaseConnection.query(`SELECT * FROM \`Table\` WHERE size > ${partySize};`);
+    DBquery
+    .on('error', (err) => {
+        console.log(err);
+    })
+    .on('result', (result : TableTableTypes) => {
+        tableList.push(new Table(result.id, result.size, result.available));
+    })
+    .on('end', () => {
+        res.json(tableList);
+    })
 };

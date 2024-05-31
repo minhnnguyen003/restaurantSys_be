@@ -1,13 +1,13 @@
 export default class FoodItem {
-    foodID: number;
-    name: string;
-    price: number;
-    category: string;
+    _foodID: number;
+    _name: string;
+    _price: number;
+    _category: string;
 
     constructor(foodID: number, name: string, price: number, category: string) {
-        this.foodID = foodID;
-        this.name = name;
-        this.price = price;
-        this.category = category;
+        this._foodID = foodID;
+        this._name = name;
+        this._price = price;
+        this._category = category;
     }
 }

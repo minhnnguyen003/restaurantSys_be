@@ -3,12 +3,12 @@ import OrderStatus from "../enum/OrderStatus";
 import OrderFoodItem from "../types/OrderFoodItem";
 
 export default class Order {
-    #orderId : number;
-    #date : Date;
-    #type : OrderTypes;
-    #status : OrderStatus;
-    #customerId : number;
-    #foodOrdered : OrderFoodItem[];
+    _orderId : number;
+    _date : Date;
+    _type : OrderTypes;
+    _status : OrderStatus;
+    _customerId : number;
+    _foodOrdered : OrderFoodItem[];
 
     constructor(orderId: number,
         date: Date,
@@ -16,44 +16,44 @@ export default class Order {
         status: OrderStatus,
         customerId: number,
     ){
-        this.#orderId = orderId;
-        this.#date = date;
-        this.#type = type;
-        this.#status = status;
-        this.#customerId = customerId;
-        this.#foodOrdered = [];
+        this._orderId = orderId;
+        this._date = date;
+        this._type = type;
+        this._status = status;
+        this._customerId = customerId;
+        this._foodOrdered = [];
     }
 
     public addFoodItem(aFoodItem : OrderFoodItem) {
-        this.#foodOrdered.push(aFoodItem);
+        this._foodOrdered.push(aFoodItem);
     }
 
     public get foodOrdered() : OrderFoodItem[] {
-        return this.#foodOrdered; 
+        return this._foodOrdered; 
     }
 
     public get orderId() : number {
-        return this.#orderId;
+        return this._orderId;
     }
     
     public get type() : OrderTypes {
-        return this.#type;
+        return this._type;
     }
     
     public get date() : Date {
-        return this.#date;
+        return this._date;
     }
     
     public get status() : OrderStatus {
-        return this.#status;
+        return this._status;
     }
     
     public get customerId() : number {
-        return this.#customerId;
+        return this._customerId;
     }
     
     public set customerId(newCustId : number) {
-        this.#customerId = newCustId;
+        this._customerId = newCustId;
     }
     
     

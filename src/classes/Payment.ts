@@ -1,10 +1,10 @@
 import PaymentMethod from "../enum/PaymentMethod";
 
 export default class Payment {
-    #paymentId : number;
-    #date : Date
-    #amount : number;
-    #paymentMethod : PaymentMethod;
+    _paymentId : number;
+    _date : Date
+    _amount : number;
+    _paymentMethod : PaymentMethod;
 
     constructor (
         paymentId : number,
@@ -12,9 +12,9 @@ export default class Payment {
         paymentMethod : PaymentMethod,
         date: string
     ){
-        this.#paymentId = paymentId;
-        this.#amount = amount;
-        this.#paymentMethod = paymentMethod;
-        this.#date = new Date(date);
+        this._paymentId = paymentId;
+        this._amount = amount;
+        this._paymentMethod = paymentMethod;
+        this._date = new Date(date);
     }
 }

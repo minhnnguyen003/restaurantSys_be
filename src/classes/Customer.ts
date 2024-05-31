@@ -1,8 +1,8 @@
 export default class Customer {
-    #customerId: number;
-    #customerName: string;
-    #customerEmail: string;
-    #customerPhone: string;
+    _customerId: number;
+    _customerName: string;
+    _customerEmail: string;
+    _customerPhone: string;
 
     constructor(
         customerId: number,
@@ -10,9 +10,9 @@ export default class Customer {
         customerEmail: string,
         customerPhone: string,) 
     {
-        this.#customerId = customerId;
-        this.#customerName = customerName;
-        this.#customerPhone = customerPhone;
-        this.#customerEmail = customerEmail;
+        this._customerId = customerId;
+        this._customerName = customerName;
+        this._customerPhone = customerPhone;
+        this._customerEmail = customerEmail;
     }
 }

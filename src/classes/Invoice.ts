@@ -1,8 +1,8 @@
 export default class Invoice {
-    #orderID : number;
-    #date : Date
-    #amount : number;
-    #customerID : number;
+    _orderID : number;
+    _date : Date
+    _amount : number;
+    _customerID : number;
 
     constructor (
         orderID : number,
@@ -10,9 +10,9 @@ export default class Invoice {
         customerID : number,
         date: string
     ){
-        this.#orderID = orderID;
-        this.#amount = amount;
-        this.#customerID = customerID;
-        this.#date = new Date(date);
+        this._orderID = orderID;
+        this._amount = amount;
+        this._customerID = customerID;
+        this._date = new Date(date);
     }
 }

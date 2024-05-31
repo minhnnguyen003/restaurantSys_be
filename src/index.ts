@@ -5,6 +5,7 @@ import cors from 'cors';
 // import Routes
 import TableRoutes from './router/TableRoutes';
 import CustomerRoutes from './router/CustomerRoutes';
+import ReservationRoutes from './router/ReservationRoutes';
 
 interface RespError {
     status?: number;
@@ -42,6 +43,7 @@ class App {
     public setRoutes() {
         this.app.use('/tables', TableRoutes.setRoutes());
         this.app.use('/customers', CustomerRoutes.setRoutes());
+        this.app.use('/reservations', ReservationRoutes.setRoutes());
     }
 
     public errorHandling() {

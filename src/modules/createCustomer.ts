@@ -4,22 +4,21 @@ import DatabaseConnection from "../classes/DatabaseConnection";
 
 export default function createCustomer(req: Request, res: Response) {
     //Handle Query String
-    let phone = req.query.phone
-    let name = req.query.name
+    let phone = req.body.phone? req.body.phone : '';
+    let name = req.body.name? req.body.name : '';
+    let email = req.body.email? req.body.email : '';
+    let insertId = 0;
     // Query here
     
-    let query = DatabaseConnection.query(`SELECT * FROM Customer WHERE phone='${phone}' OR name LIKE '%${name}%';`);
+    let query = DatabaseConnection.query(`INSERT INTO Customer(name, email, phone) VALUES ('${name}','${email}','${phone}');`);
     query
     .on('error', (err) => {
         console.log(err);
     })
     .on('result', (row) => {
-        console.log(row);
+        insertId = row.insertId;
     })
-
-    // Data Setup
-    
-    // Return Object
-    res.setHeader('Content-Type', 'application/json');
-    res.json();
+    .on('end', () => {
+        res.json(insertId);
+    })
 };
