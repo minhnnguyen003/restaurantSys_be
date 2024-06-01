@@ -1,6 +1,6 @@
 import Position from "../enum/Position";
 
-export default abstract class Staff {
+export default class Staff {
     #staffId: number;
     #name: string;
     #dob: Date;

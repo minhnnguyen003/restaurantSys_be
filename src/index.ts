@@ -6,6 +6,8 @@ import cors from 'cors';
 import TableRoutes from './router/TableRoutes';
 import CustomerRoutes from './router/CustomerRoutes';
 import ReservationRoutes from './router/ReservationRoutes';
+import OrderRoutes from './router/OrderRoutes';
+import InventoryRoutes from './router/InventoryRoutes';
 
 interface RespError {
     status?: number;
@@ -24,7 +26,7 @@ class App {
     constructor(port: number) {
         this.app = express();
         let options: cors.CorsOptions = {
-            origin: ['*'],
+            origin: ["*"],
         };
 
         this.app.use(express.json());
@@ -44,6 +46,8 @@ class App {
         this.app.use('/tables', TableRoutes.setRoutes());
         this.app.use('/customers', CustomerRoutes.setRoutes());
         this.app.use('/reservations', ReservationRoutes.setRoutes());
+        this.app.use('/orders', OrderRoutes.setRoutes());
+        this.app.use('/inventory', InventoryRoutes.setRoutes());
     }
 
     public errorHandling() {

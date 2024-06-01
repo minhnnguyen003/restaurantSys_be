@@ -1,12 +1,12 @@
 export default class Reservation {
     _reservationID : number;
-    _customerID : string;
+    _customerID : number;
     _dateTime: string;
     _tableId: number;
 
     constructor (
         reservationID : number,
-        customerID : string,
+        customerID : number,
         dateTime : string,
         tableID : number)
     {

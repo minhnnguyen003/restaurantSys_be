@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-import Invoice from "../classes/Invoice";
 
-export default function createInvoice(req: Request, res: Response) {
+export default function createAnOrder(req: Request, res: Response) {
 
     // Query here
     

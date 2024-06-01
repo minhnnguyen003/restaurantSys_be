@@ -10,7 +10,7 @@ export default abstract class ReservationRoutes {
         this._routes = Router();
 
         this._routes.post('/', createAReservation);
-        this._routes.get('/', getAReservation);
+        this._routes.get('/:id', getAReservation);
         return this._routes;
     }
 }
