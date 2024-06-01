@@ -22,15 +22,14 @@ let port = parseInt(process.env.PORT || '8080');
 class App {
     app : Application;
     
-
     constructor(port: number) {
         this.app = express();
-        let options: cors.CorsOptions = {
-            origin: ["*"],
-        };
 
+        // Middleware Setup
         this.app.use(express.json());
-        this.app.use(cors(options));
+
+        // CORS Config
+        this.app.use(cors());
 
         this.setRoutes();   
 
